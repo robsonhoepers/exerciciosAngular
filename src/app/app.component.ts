@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularProject';
+  title: string = 'angularProject';
+
+  titulo: string = ""
+  input: string = ""
+  value: string = ""
+ 
+  public cliqueSalvar(){
+   this.titulo = this.input
+   this.value = this.input
+  }
+
+  public cliqueLimpar(){
+   this.value = ""
+  }
 }

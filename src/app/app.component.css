@@ -1,0 +1,24 @@
+.clMargem{
+    margin-top: 10px;
+    text-align: center;
+    display: flexbox;
+    
+}
+
+.clMargemBotao{
+   
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+button{
+    display: inline;
+}
+
+.clCenter{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
