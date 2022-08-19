@@ -2,19 +2,17 @@
     <section class="container-sm pe-4 shadow-lg p-3 mb-5">
            <h2 class="ms-1">Login</h2>
            <div class="m-2 d-block mt-3">
-            <label class="text-secondary d-block mb-1" for="idEmail">E-Mail Address</label>
+            <label class="text-secondary d-block mb-1" for="idUserId">E-Mail Address</label>
            </div>
            <input  class="w-100 m-2 rounded border border-gray p-1" type="text"
-                (input) =  "email = campoEmail.value"
-                #campoEmail>
+                   [(ngModel)] = "usuario.userId">
 
                 <div class="row ps-2 mt-3">            
                     <label class="text-secondary d-block mb-1" for="idPassword">Password</label>
                     <div class="col-sm-6 text-end"><a href="" >Forgot Password?</a></div>    
                 </div>
-                <input class="w-100 m-2 rounded border border-gray p-1" type="text" id="idPassword"
-                (input) = "senha = campoSenha.value"
-                #campoSenha>
+                <input class="w-100 m-2 rounded border border-gray p-1" type="password" id="idPassword"
+                       [(ngModel)] = "usuario.password">
 
                 <div class="m-2 d-block row d-flex mb-4">
                     <div class="col-sm-6">
@@ -23,12 +21,21 @@
                     </div>
                     <div class="col-sm-6 text-end"><button class="btn btn-primary" (click)="login()">Login</button></div>
                 </div>
-                <p [class]="msnStyle">{{msn}}</p>
+
+
+                <div class="d-flex justify-content-center m-2">
+                    <div class = "spinner-border" *ngIf = "showSpinner; else showMsn"></div>
+                    
+                </div>
+                <ng-template #showMsn>                        
+                        <p *ngIf = "msn != ''" [ngClass] = "classMsn">{{msn}}</p>
+                </ng-template>
 
                 <div  class="d-flex justify-content-center p-1 bg-secondary">
                     <p>Don't have an account? <a href="" class="">Create One</a></p>
                 </div>
             </section>
+        
         
             <div  class="d-flex justify-content-center">
                 <p class="">Copyright © 2017-2021 ― Your Company</p>

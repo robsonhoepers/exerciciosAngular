@@ -1,3 +1,13 @@
 section{
   width: 400px;
 }
+
+.clLogado{
+    color: green;
+    align-items: center;
+}
+
+.clError{
+    color: red;
+    align-items: center;
+}
