@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'angularProject';
 
-  titulo: string = ""
-  input: string = ""
-  value: string = ""
- 
-  public cliqueSalvar(){
-   this.titulo = this.input
-   this.value = this.input
+  constructor(private router: Router){}
+
+  public signiOut(){
+    localStorage['token'] = 'false'
+    this.router.navigate(['/login']);
   }
 
-  public cliqueLimpar(){
-   this.value = ""
+  /**
+   * readLocalStorageToken
+   */
+  public readLocalStorageToken() {
+    if (localStorage['token'] === 'true'){
+      return true
+    } else {
+      return false
+    }
+    
   }
 }

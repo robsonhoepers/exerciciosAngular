@@ -1,14 +1,23 @@
-<div class="clCenter">
-  <h1 class="clMargem">{{ titulo }}</h1>
+<nav class="navbar navbar-expand-sm bg-light">
 
-
-  <input class="clMargem" type="text" 
-      [value]="value"
-      (input) = "input = campoInput.value"
-      #campoInput>
-      <div>
-        <button (click)="cliqueSalvar()" class="clMargemBotao">Salvar</button>
-        <button (click)="cliqueLimpar()" class="clMargemBotao">Limpar</button>
-      </div>
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contato">Contato</a>
+      </li>     
+    </ul>
   </div>
-  <app-autenticacao></app-autenticacao>
+  <div>
+    <div><button class="btn btn-info" [disabled] = "!readLocalStorageToken()" (click)="signiOut()">Deslogar</button></div>
+  
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<div id="footer" class="">
+  <div class="container">
+    <p class="d-flex justify-content-center" style = "color: black;">Email: robsonhoepers@yahoo.com.br    WhatsApp: (47) 99737-0380    GitHub: https://github.com/robsonhoepers</p>
+  </div>
+</div>
